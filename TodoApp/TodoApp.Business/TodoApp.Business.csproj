@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TodoApp.DataAccsess\TodoApp.DataAccsess.csproj" />
+    <ProjectReference Include="..\TodoApp.Dtos\TodoApp.Dtos.csproj" />
+  </ItemGroup>
+
+</Project>

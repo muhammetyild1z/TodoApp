@@ -1,0 +1,49 @@
+﻿@model List<Work>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<a href="~/lib/bootstrap/dist/css/bootstrap.css.map">~/lib/bootstrap/dist/css/bootstrap.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map">~/lib/bootstrap/dist/css/bootstrap.min.css.map</a>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<title>Page Title</title>
+</head>
+<body>
+
+   <div class="container my-2"> 
+    <div class="text-end my-2">
+         <a asp-action="Create" asp-controller="Home" class="btn btn-outline-primary"> Yeni Is Ekle</a>
+    </div>
+<h1>Todo App</h1>
+
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>Gorev</th>
+            <th>Durum</th>
+        </tr>
+    </thead>
+
+     <tbody>
+
+                @foreach (var item in Model)
+                {
+                                <tr>
+                                            <td>@item.Definition</td>
+                                            <td>@(item.IsCompleted ? "Tamamlandi" : "Tamamlanmadi")</td>
+                                            <td>
+                                                <a asp-action="Update" asp-controller="Home" asp-route-id="@item.Id" class="btn btn-dark">Guncelle</a>
+                                            </td>
+                                </tr>
+                }
+
+    </tbody>
+</table>
+</div>
+</body>
+</html>
